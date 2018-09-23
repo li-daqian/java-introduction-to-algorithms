@@ -7,7 +7,7 @@ public class MergeSort {
 
     /**
      * 归并排序
-     * 时间 O(nlogn)
+     * 时间 O(nlgn)
      * @param array
      */
     public static void sort(int[] array) {
