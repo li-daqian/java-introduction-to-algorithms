@@ -7,7 +7,7 @@ public class InsertionSort {
 
     /**
      * 插入排序
-     * 时间 O(n²)
+     * 时间复杂度 O(n^2)
      * @param array 未排序数组
      */
     public static void sort(int[] array) {

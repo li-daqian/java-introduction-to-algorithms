@@ -1,12 +1,16 @@
 package subarray;
 
 /**
- * 最大子数组问题
- * 时间 o(nlgn)
  * @author LiDaQian
  */
 public class FindMaximumSubArray {
 
+    /**
+     * 找到最大子数组
+     * 时间复杂度 o(n*lgn)
+     * @param array
+     * @return
+     */
     public static SubArray find(int[] array) {
         return find(array, 0, array.length - 1);
     }
