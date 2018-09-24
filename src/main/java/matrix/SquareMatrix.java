@@ -7,7 +7,7 @@ public class SquareMatrix {
 
     /**
      * 正方形矩阵乘法
-     * 时间复杂度 o(n^3)
+     * 时间复杂度 O(n^3)
      */
     public static int[][] multiply(int[][] a, int[][] b) {
         int[][] result = new int[a.length][a.length];
@@ -24,7 +24,7 @@ public class SquareMatrix {
 
     /**
      * strassen矩阵乘法
-     * 时间复杂度 o(n^lg7)
+     * 时间复杂度 O(n^lg7)
      */
     public static int[][] strassenMultiply(int[][] a, int[][] b) {
         int n = a.length;

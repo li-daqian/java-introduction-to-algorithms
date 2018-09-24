@@ -7,7 +7,7 @@ public class FindMaximumSubArray {
 
     /**
      * 找到最大子数组
-     * 时间复杂度 o(n*lgn)
+     * 时间复杂度 O(n*lgn)
      * @param array
      * @return
      */
@@ -21,10 +21,14 @@ public class FindMaximumSubArray {
         }
 
         int mid = (low + high) / 2;
+        // 左半部分最大子数组
         SubArray leftSubArray = find(array, low, mid);
+        // 右半部分最大子数组
         SubArray rightSubArray = find(array, mid + 1, high);
+        // 跨中点最大子数组
         SubArray crossSubArray = findByCrossing(array, low, mid, high);
 
+        // 从三者子数组中找到最大的
         if (leftSubArray.getSum() >= rightSubArray.getSum() && leftSubArray.getSum() >= crossSubArray.getSum()) {
             return leftSubArray;
         } else if (rightSubArray.getSum() >= leftSubArray.getSum() && rightSubArray.getSum() >= crossSubArray.getSum()) {
@@ -60,6 +64,7 @@ public class FindMaximumSubArray {
             }
         }
 
+        // 合并 返回
         return new SubArray(leftIndex, rightIndex, leftMaxSum + rightMaxSum);
     }
 }
