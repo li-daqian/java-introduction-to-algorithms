@@ -14,7 +14,7 @@ public class QuickSortTest {
 
     @Test
     public void testSort() {
-        int[] array = ArrayUtil.generateRandomArray(10);
+        int[] array = ArrayUtil.generateRandomArray(30);
         int[] arrayCopy = new int[array.length];
         System.arraycopy(array, 0, arrayCopy, 0, array.length);
 

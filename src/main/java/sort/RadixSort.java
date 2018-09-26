@@ -31,21 +31,23 @@ public class RadixSort {
         int[] tempArray = new int[array.length];
         System.arraycopy(array, 0, tempArray, 0, array.length);
 
-        for (int i = 1; i <= digit; i++) {
+        for (int i = 0; i < digit; i++) {
             int[] countArray = makeCountArray(array, i);
 
             for (int j = array.length - 1; j >= 0; j--) {
-                int index = tempArray[j] % (10 ^ digit);
+                // 获取第i+1位的数字
+                int index = (tempArray[j] / (int) Math.pow(10, i)) % 10;
                 array[countArray[index] - 1] = tempArray[j];
                 countArray[index] = countArray[index] - 1;
             }
+            System.arraycopy(array, 0, tempArray, 0, array.length);
         }
     }
 
     private static int[] makeCountArray(int[] array, int digit) {
         int largest = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
-            int num = array[i] % (10 ^ digit);
+            int num = (array[i] / (int) Math.pow(10, digit)) % 10;
             if (num > largest) {
                 largest = num;
             }
@@ -53,7 +55,7 @@ public class RadixSort {
 
         int[] result = new int[largest + 1];
         for (int i = 0; i < array.length; i++) {
-            int num = array[i] % (10 ^ digit);
+            int num = (array[i] / (int) Math.pow(10, digit)) % 10;
             result[num] = result[num] + 1;
         }
         for (int i = 1; i < result.length; i++) {

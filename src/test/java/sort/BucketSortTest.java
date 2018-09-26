@@ -10,7 +10,7 @@ import util.ArrayUtil;
 /**
  * @author LiDaQian
  */
-public class RadixSortTest {
+public class BucketSortTest {
 
     @Test
     public void testSort() {
@@ -18,7 +18,7 @@ public class RadixSortTest {
         int[] arrayCopy = new int[array.length];
         System.arraycopy(array, 0, arrayCopy, 0, array.length);
 
-        RadixSort.sort(array);
+        BucketSort.sort(array);
         Arrays.sort(arrayCopy);
 
         Assert.assertArrayEquals(arrayCopy, array);
